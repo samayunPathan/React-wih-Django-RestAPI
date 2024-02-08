@@ -23,3 +23,18 @@ class StatusListAPIView(generics.ListAPIView):
 class StatusCreateAPIView(generics.CreateAPIView):
     queryset=Status.objects.all()
     serializer_class=StatusSerializer
+
+class StatusDetailAPIView(generics.RetrieveAPIView):
+    queryset=Status.objects.all()
+    serializer_class=StatusSerializer
+    lookup_field='id'
+
+class StatusUpdateAPIView(generics.UpdateAPIView):
+    queryset=Status.objects.all()
+    serializer_class=StatusSerializer
+    lookup_field='id'
+
+class StatusDeleteAPIView(generics.DestroyAPIView):
+    queryset=Status.objects.all()
+    serializer_class=StatusSerializer
+    lookup_field='id'
